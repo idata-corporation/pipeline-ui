@@ -1,0 +1,98 @@
+{
+  "name": "idata",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@material-ui/core": "^4.11.0",
+    "@react-navigation/native": "5.6.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "aws-amplify": "^3.0.20",
+    "aws-api-gateway-client": "^0.3.5",
+    "aws-param-store": "^3.2.0",
+    "aws-sdk": "^2.709.0",
+    "base-64": "^0.1.0",
+    "body-parser": "latest",
+    "bootstrap": "^4.5.0",
+    "css-loader": "^3.6.0",
+    "ejs": "latest",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.5",
+    "jquery": "^3.5.1",
+    "material-table": "^1.66.0",
+    "material-ui": "^0.20.2",
+    "mdbreact": "^4.27.0",
+    "node-fetch": "^2.6.1",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
+    "react-bootstrap-icons": "^1.0.3-alpha5",
+    "react-bootstrap-sweetalert": "^5.2.0",
+    "react-bootstrap-table": "^4.3.1",
+    "react-bootstrap-table-next": "^4.0.3",
+    "react-bootstrap-table2-editor": "^1.4.0",
+    "react-bootstrap-table2-filter": "^1.3.3",
+    "react-dom": "^16.13.1",
+    "react-dropdown-select": "^4.7.1",
+    "react-infinite-scroller": "^1.2.4",
+    "react-loader-spinner": "^3.1.14",
+    "react-materialize": "^3.9.2",
+    "react-modal": "^3.11.2",
+    "react-promise-tracker": "^2.1.0",
+    "react-responsive": "^8.1.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.4",
+    "react-scroll": "^1.8.1",
+    "react-scrollbar": "^0.5.6",
+    "react-select": "^3.1.1",
+    "react-stepper-horizontal": "^1.0.11",
+    "react-tooltip": "^4.2.8",
+    "react-transition-group": "^1.1.3",
+    "reactjs-popup": "^2.0.3",
+    "reactstrap": "^8.5.1",
+    "semantic-ui-react": "^0.88.2"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
+  },
+  "engines": {
+    "npm": "6.10.0",
+    "node": "v10.16.0"
+  },
+  "watch": {
+    "start": "{src,test}/*.js"
+  },
+  "scripts": {
+    "start": "cross-env NODE_PATH=src react-scripts start",
+    "build": "cross-env NODE_PATH=src react-scripts build",
+    "build:docker": "env-cmd -f .env.docker cross-env NODE_PATH=src react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "watch": "npm-watch"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "npm-watch": "^0.11.0",
+    "cross-env": "^7.0.3",
+    "react-styleguidist": "^11.0.8",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
