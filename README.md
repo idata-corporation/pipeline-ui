@@ -1,3 +1,5 @@
+This project is the user-interface for the IData Pipeline Server (https://github.com/idata-corporation/pipeline-server)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
