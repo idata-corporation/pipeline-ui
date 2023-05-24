@@ -15,6 +15,7 @@ import Tab from 'react-bootstrap/Tab';
 const API_GATEWAY_ENDPOINT = process.env.REACT_APP_API_GATEWAY_ENDPOINT;
 const X_API_KEY = process.env.REACT_APP_X_API_KEY;
 const REACT_APP_REQUIRE_LOGIN = process.env.REACT_APP_REQUIRE_LOGIN.toLowerCase() === 'true' ? true : false;
+const REACT_APP_DISPLAY_TRIGGER_STATUS = process.env.REACT_APP_DISPLAY_TRIGGER_STATUS?.toLowerCase() === 'true' ? true : false;
 
 class Dashboard extends Component {
   constructor(props) {
@@ -243,31 +244,33 @@ class Dashboard extends Component {
                       />
                     </div>
                   </Tab>
-                  <Tab eventKey="trigger" title="Trigger Status">
-                    <div className="container-fluid tabCont">
-                      <FilterForm
-                        tabSelect="Data"
-                        tabType={this.state.tabType}
-                        author={false}
-                        onChange={this.onValueChange}
-                        callFilterProcess={this.callFilterProcess.bind(this)}
-                        loadMoreData={this.props.loadMoreData}
-                      />
-                      <NewDataSource
-                        keyField="pipelineToken"
-                        tabType={this.state.tabType}
-                        columns={this.columnsData}
-                        dataSource={dataSource}
-                        applyFilter={this.state.applyFilter}
-                        filterProcessKeyword={this.state.filterProcessKeyword}
-                        isSelect={true}
-                        onTurn={this.onTurn.bind(this)}
-                        pipelineToken={this.fetchLogsData.bind(this)}
-                        setRefreshToken={this.setRefreshToken.bind(this)}
-                        loadNextPage = {this.loadNextPage.bind(this)}
-                      />
-                    </div>
-                  </Tab>
+                  { REACT_APP_DISPLAY_TRIGGER_STATUS && (
+                    <Tab eventKey="trigger" title="Trigger Status">
+                      <div className="container-fluid tabCont">
+                        <FilterForm
+                          tabSelect="Data"
+                          tabType={this.state.tabType}
+                          author={false}
+                          onChange={this.onValueChange}
+                          callFilterProcess={this.callFilterProcess.bind(this)}
+                          loadMoreData={this.props.loadMoreData}
+                        />
+                        <NewDataSource
+                          keyField="pipelineToken"
+                          tabType={this.state.tabType}
+                          columns={this.columnsData}
+                          dataSource={dataSource}
+                          applyFilter={this.state.applyFilter}
+                          filterProcessKeyword={this.state.filterProcessKeyword}
+                          isSelect={true}
+                          onTurn={this.onTurn.bind(this)}
+                          pipelineToken={this.fetchLogsData.bind(this)}
+                          setRefreshToken={this.setRefreshToken.bind(this)}
+                          loadNextPage = {this.loadNextPage.bind(this)}
+                        />
+                      </div>
+                    </Tab>
+                  )}
                 </Tabs>
               )}
               {this.state.key === "logs" && (
